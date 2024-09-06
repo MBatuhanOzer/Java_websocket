@@ -18,7 +18,26 @@ repositories {
 }
 
 dependencies {
+	// Web & WebSocket
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+	// JPA for database access
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// PostgreSQL database
+	implementation 'org.postgresql:postgresql:42.2.18'
+
+	// Spring Security for authentication and password hashing
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.security:spring-security-web'
+	implementation 'org.springframework.security:spring-security-config'
+	implementation 'org.springframework.security:spring-security-crypto'
+
+	// Thymeleaf for server-side templates
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	// Test dependencies
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
@@ -26,3 +45,4 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
