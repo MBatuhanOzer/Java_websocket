@@ -11,14 +11,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 public class User implements UserDetails {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
     private String password;
-    private boolean enabled;
-
-    // Getters and setters
+    private boolean enabled;  // This is the field
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -59,5 +58,10 @@ public class User implements UserDetails {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    // Add the missing setter for `enabled`
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }
