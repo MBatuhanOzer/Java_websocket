@@ -17,7 +17,7 @@ public class User implements UserDetails {
     private Long id;
     private String username;
     private String password;
-    private boolean enabled;  // This is the field
+    private boolean enabled; 
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -60,7 +60,6 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    // Add the missing setter for `enabled`
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }

@@ -34,7 +34,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/register", "/login").permitAll() // Public access
+                .requestMatchers("/register", "/login").permitAll() 
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
@@ -47,7 +47,6 @@ public class SecurityConfig {
                 .permitAll()
             );
 
-        // No need to call csrf() as it is enabled by default
 
         return http.build();
     }
