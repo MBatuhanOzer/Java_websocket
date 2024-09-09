@@ -9,19 +9,57 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import org.springframework.security.core.userdetails.UserDetails;
 
-@Entity(name = "users")
+/**
+ * A user of the application. This class represents a real table in the
+ * database.
+ */
+@Entity
 public class User implements UserDetails {
 
+    /**
+     * The unique identifier for the user.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    /**
+     * The username of the user.
+     */
     private String username;
+
+    /**
+     * The password of the user.
+     */
     private String password;
-    private boolean enabled; 
+
+    /**
+     * Whether the user is enabled or not.
+     */
+    private boolean enabled = true;
+
+    /**
+     * Default constructor.
+     */
+    public User() {
+    }
+
+    /**
+     * Constructor that takes in the username and password.
+     * 
+     * @param username
+     *            The username of the user.
+     * @param password
+     *            The password of the user.
+     */
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptyList(); 
+        return Collections.emptyList();
     }
 
     @Override
