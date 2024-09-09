@@ -9,7 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import org.springframework.security.core.userdetails.UserDetails;
 
-@Entity
+@Entity(name = "users")
 public class User implements UserDetails {
 
     @Id

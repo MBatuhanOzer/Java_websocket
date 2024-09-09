@@ -1,4 +1,4 @@
-package com.example.Java_websocket;
+package com.example.Java_websocket.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
