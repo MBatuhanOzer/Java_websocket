@@ -37,4 +37,12 @@ public class AuthController {
     public String showLoginForm() {
         return "login";
     }
+
+    @PostMapping("/login")
+    public String login() {
+        // TODO: Add login logic
+        
+        // Redirect to home page
+        return "redirect:/";
+    }
 }
