@@ -17,7 +17,7 @@ import org.springframework.security.core.userdetails.UserDetails;
  * A user of the application. This class represents a real table in the
  * database.
  */
-@Entity
+@Entity(name = "users")
 @Table(name = "users")
 public class User implements UserDetails {
 
