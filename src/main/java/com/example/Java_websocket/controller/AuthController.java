@@ -40,8 +40,6 @@ public class AuthController {
 
     @PostMapping("/login")
     public String login() {
-        // TODO: Add login logic
-        
         // Redirect to home page
         return "redirect:/";
     }
